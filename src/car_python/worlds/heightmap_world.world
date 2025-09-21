@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="heightmap_world">
+    <!-- Basic world elements like sun, atmosphere, etc. -->
+    <light name="sun" type="directional">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+
+    <!-- Terrain with heightmap -->
+    <model name="terrain">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <heightmap>
+              <!-- Reference your PNG heightmap file -->
+              <uri>file:///root/test/workspace/src/car/images/test_65.png</uri>
+              <size>513 513 100</size> <!-- Adjust dimensions -->
+              <pos>0 0 0</pos>
+              <use_terrain_paging>false</use_terrain_paging>
+            </heightmap>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <heightmap>
+              <uri>file:///root/test/workspace/src/car/images/test_65.png</uri>
+              <size>513 513 100</size> <!-- Same dimensions as above -->
+              <pos>0 0 0</pos>
+            </heightmap>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

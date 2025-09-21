@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<robot>
+    <gazebo reference="Camara">
+        <sensor type="depth" name="depth_camera">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>true</visualize>
+            <update_rate>100.0</update_rate>
+            <camera>
+                <horizontal_fov>2</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.1</near>
+                    <far>50.0</far>
+                </clip>
+            </camera>
+            <plugin name="depth_camera_controller" filename="libgazebo_ros_camera.so">
+               
+                        <ros>
+                            <argument>use_sim_time:=true</argument>
+                        </ros>
+                <frame_name>camera_optical_frame</frame_name>
+                <publish_tf>true</publish_tf>
+            </plugin>
+        </sensor>
+    </gazebo>
+</robot>

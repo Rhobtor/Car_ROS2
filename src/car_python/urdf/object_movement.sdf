@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="moving_obstacle">
+    <!-- El modelo no es estático, ya que se mueve -->
+    <static>false</static>
+
+    <!-- Definición del enlace principal -->
+    <link name="link">
+      <!-- Definición de la geometría para colisión -->
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1 1 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <!-- Definición de la geometría para visualización -->
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>1 1 1</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Inclusión del plugin que controlará el movimiento -->
+    <plugin name="movingObstaclePlugin" filename="libmove_plugin.so"/>
+  </model>
+</sdf>

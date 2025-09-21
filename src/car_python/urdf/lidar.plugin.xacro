@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<robot>
+  <!-- LiDAR 3D con gpu_ray -->
+  <gazebo reference="Lidar">
+    <sensor type="gpu_ray" name="Lidar">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>10.0</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+          <vertical>
+            <!-- Define un barrido vertical; ajusta samples y ángulos según el FOV deseado -->
+            <samples>25</samples>
+            <min_angle>-0.523599</min_angle>  <!-- -15° -->
+            <max_angle>0.523599</max_angle>    <!-- 15° -->
+          </vertical>
+        </scan>
+        <range>
+          <min>0.3</min>
+          <max>40.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="lidar_controller" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <argument>use_sim_time:=true</argument>
+          <!-- Publica directamente en un topic; si deseas trabajar con nubes de puntos, puedes publicar PointCloud2 -->
+          <argument>~/out:=/scan_cloud</argument>
+        </ros>
+        <frame_name>Lidar</frame_name>
+        <!-- Especifica que el output es PointCloud2 -->
+        <output_type>sensor_msgs/PointCloud2</output_type>
+      </plugin>
+    </sensor>
+  </gazebo>
+</robot>

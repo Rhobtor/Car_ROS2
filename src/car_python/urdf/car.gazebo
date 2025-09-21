@@ -1,0 +1,150 @@
+<?xml version="1.0" ?>
+<robot name="car" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/White" />
+
+<!-- <gazebo>
+  <plugin name="control" filename="libgazebo_ros_control.so"/>
+</gazebo> -->
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="chasis_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="suspension_front_left__1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="direction_front_left_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="rim_front_left_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="tire_front_right_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="suspension_front_right_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="direction_front_right_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="rim_front_right_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="tire_back_left_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="suspension_back_right_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="direction_back_right_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="rim_back_left_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="tire_back_right_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="suspension_back_left_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="direction_back_left_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="rim_back_right_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="tire_front_left_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="Lidar_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+<gazebo reference="camara_1">
+  <material>${body_color}</material>
+  <mu1>5</mu1>
+  <mu2>5</mu2>
+  <self_collide>true</self_collide>
+</gazebo>
+
+</robot>
