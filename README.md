@@ -114,13 +114,15 @@ Plugins are loaded from the robot’s `.xacro` / `.gazebo` configuration via the
 
 ## Docker
 
+The docker run in low fps , still in progress
+
 **Dockerfiles** are provided for running the project in containers (useful for CI/CD and reproducible environments).
 
 Example:
 
 ```bash
 # Build image
-docker build -t car_ros2 -f Dockerfile .
+docker build -t car_ros2 -f dockerfile .
 
 # Run with X11 graphics (Linux)
 xhost +local:root

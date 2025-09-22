@@ -25,7 +25,6 @@ find_package(tf2_msgs REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(ignition-math6 REQUIRED)
 find_package(ignition-common3 REQUIRED)
-find_package(car_interfaces REQUIRED)
 
 
 
